@@ -453,6 +453,43 @@ mark{
     text-decoration: none;
     color: var(--YellowDescriptions);
 }
+
+#toggle-buttonI {
+    font-size: 40px;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    background-color:var(--blackGeneral);
+    margin-top: 5%;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;   
+     font-weight: bold;
+      color: #ffff;  
+      font-style: italic; 
+      font-family: 'Cormorant Garamond';
+}
+
+#toggle-buttonI:hover{
+border: 6px solid #ffff;
+height: auto;
+padding: 10px;
+}
+
+/* Style for the image section */
+.image-section {
+    align-self: center;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
 footer {
     margin-top: 100px;
     background-color: var(--blackGeneral);

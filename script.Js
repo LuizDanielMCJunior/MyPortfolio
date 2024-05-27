@@ -98,4 +98,12 @@ document.addEventListener("DOMContentLoaded", function() {
         currentContentIndex = selectedIndex;
     });
 });
-
+document.getElementById('toggle-buttonI').addEventListener('click',
+ function() {
+    var image = document.getElementById('toggle-image');
+    if (image.style.display === 'none') {
+        image.style.display = 'block';
+    } else {
+        image.style.display = 'none';
+    }
+});
