@@ -1,3 +1,4 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,26 +9,26 @@
     <link rel="stylesheet" href="./responsive.css">
 </head>
 <body>
-    <!-- Your Navbar goes here -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">LDCMJR ツ</div>
-        <ul>
-            <li><a href="#apresentation">Home</a></li>
-            <li><a href="#knowMe">About</a></li>
-            <li><a id="toggle-button">Contact</a></li> <!-- Toggle Button -->
+        <ul class="linksMenu">
+            <li class="LinksMenuLi"><a href="#apresentation">Home</a></li>
+            <li class="LinksMenuLi"><a href="#knowMe">About</a></li>
+            <li class="LinksMenuLi"><a id="toggle-button">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Toggle Menu -->
-    <div id="toggle-menu" class="toggle-menu">
-        <!-- Menu Content goes here -->
+    <div id="toggle-contatos" class="toggle-contatos">
         <ul>
             <li><a href="https://wa.me/5512974097345"><img class="Icons" src="../images/whats.SG.svg"></a></li>
             <li><a href="https://github.com/LuizDanielMCJunior"><img class="Icons" src="../images/GitHub.SVG"></a></li>
-            <li><a href="https://www.linkedin.com/in/luiz-daniel-mendes-cardoso-junior-2293b6219/"><img class="Icons" src="../images/Linkedin.SVG" alt="" srcset=""></a></li>
+            <li><a href="https://www.linkedin.com/in/luiz-daniel-mendes-cardoso-junior-2293b6219/"><img class="Icons" src="../images/Linkedin.SVG"></a></li>
         </ul>
     </div>
 
+    <!-- Presentation Section -->
     <section class="apresentation" id="apresentation">
          <p class="apresentationText">Hello!<br>
          My name is Luiz Daniel M C Junior and I am a Front-End Developer.
@@ -35,154 +36,119 @@
          <img class="LDMCJR" src="../images/eu.2.jpg" alt="LuizDanielPhoto">
     </section>
 
-    <button id="toggle-buttonT" class="toggle-buttonT">My Technologies</button>
+    <!-- Technologies Toggle Button -->
+    <button id="toggle-buttonTechnologies" class="toggle-buttonTechnologies">My Technologies</button>
 
-    <section id="technologies" class="technologies">
-        <div class="technology">
+    <!-- Technologies Section -->
+    <section id="SectionTechnologies" class="SectionTechnologies">
+        <div class="EachTechnology">
             <img class="IMG" src="../images/HMTL.SVG" alt="htmlphoto">
             <span class="description">HTML is the standard markup language used to create and design web pages. It provides the structure and content of a web page by using a system of tags and attributes to define elements such as headings, paragraphs, links, images, and more.</span>
         </div>
-
-        <div class="technology">
-            <img class="IMG" src="../images/CSS.SVG" alt="CSS.photo">
+        <div class="EachTechnology">
+            <img class="IMGEachTechnology" src="../images/CSS.SVG" alt="CSS.photo">
             <span class="description">CSS is a style sheet language used for describing the presentation of a document written in HTML or XML. It controls the layout, colors, fonts, and other visual aspects of web pages, allowing developers to create visually appealing and responsive designs.</span>
         </div>
-
-        <div class="technology">
-            <img class="IMG" src="../images/JavaScript.SVG" alt="JavaScript.photo">
+        <div class="EachTechnology">
+            <img class="IMGEachTechnology" src="../images/JavaScript.SVG" alt="JavaScript.photo">
             <span class="description">JavaScript is a high-level programming language that enables interactive and dynamic behavior on web pages. It is primarily used for client-side scripting to add functionality such as form validation, interactivity, animations, and asynchronous communication with servers. JavaScript is also commonly used for server-side development with platforms like Node.js.</span>
         </div>
-        
-        <div class="technology">
-            <img class="IMG" src="../images/React.Js.SVG.svg" alt="React.Js.photo">
+        <div class="EachTechnology">
+            <img class="IMGEachTechnology" src="../images/React.Js.SVG.svg" alt="React.Js.photo">
             <span class="description">React is a JavaScript library developed by Facebook for building user interfaces, particularly for single-page applications and reusable UI components. It allows developers to create interactive and responsive web applications by composing UI components into a hierarchical structure. React uses a virtual DOM for efficient rendering and provides tools for managing application state and handling events.</span>
         </div>
     </section>
 
-<div class="knowMe" id="knowMe">
-    <h3>KNOW ME</h3>
-</div>
-
-
-    <div class="menu">
+    <!-- Know Me Section -->
+    <h3 class="knowMe" id="knowMe">KNOW ME</h3>
+    <div class="menuKnowMe">
         <button id="pauseButton">Pause To Read</button>
         <select id="topicSelect">
             <option value="1">More About</option>
             <option value="2">Free Time</option>
             <option value="3">Relax Time</option>
         </select>
-        </div>
-     <div class="container">
+    </div>
+
+    <!-- Content Sections -->
+    <div class="containerKnowMe">
         <div class="content active" id="content1">
-
-            <div class="descricao">
-                <h2 >More about me</h2>
-           <mark> 
-            <p> I spend most of my time studying in my computer.
-               i Have been learning Front-End about a couple months and the rest of the time i like to learn 
-               about different things including investing and technology</p>
-              </mark>
-            </div> 
-          
-                <img class="fotosContentLDMCJR" src="../images/LDMCJR.SEX.jpg" alt="fotoLuizDaniel"> 
-
-
-            </div>
-      
-           <!-- Content for the first section -->
-
-        <div class="content"  id="content2">
-
-            <div class="descricao">
-                <h2> Free time and hobbies</h2>
+            <div class="descricaoKnowAboutMe">
+                <h2>More about me</h2>
                 <mark>
-                     <p>I like to do outdoor activies, like run and walk with my dog. acttually, we walk togheter ever single day.</p>
-          </mark>
+                    <p>I spend most of my time studying on my computer. I have been learning Front-End for a couple of months and in my free time, I like to learn about different things including investing and technology.</p>
+                </mark>
+            </div>
+            <img class="fotosContentLDMCJR" src="../images/LDMCJR.SEX.jpg" alt="fotoLuizDaniel">
         </div>
-
-        
-       
-            <img class="fotosContentRSS" src="../images/my.dog.jpg" >
-     
-
-            <!-- Content for the second section -->
+        <div class="content" id="content2">
+            <div class="descricaoKnowAboutMe">
+                <h2>Free time and hobbies</h2>
+                <mark>
+                    <p>I like to do outdoor activities, like running and walking with my dog. Actually, we walk together every single day.</p>
+                </mark>
+            </div>
+            <img class="fotosContentRSS" src="../images/my.dog.jpg" alt="my dog">
         </div>
-
         <div class="content" id="content3">
-
-            <div class="descricao">
-            <h2>Relax time</h2>
-            <mark> 
-                <p>To relax i do prefer reading a book and listen to some music.</p>
-       </mark> 
-    </div>
-    
-          
-                <img  class="fotosContent" src="../images/eu.Sol" >
-            
-            <!-- Content for the third section -->
+            <div class="descricaoKnowAboutMe">
+                <h2>Relax time</h2>
+                <mark>
+                    <p>To relax I prefer reading a book and listening to some music.</p>
+                </mark>
+            </div>
+            <img class="fotosContent" src="../images/eu.Sol" alt="Relax time">
         </div>
     </div>
-</div>
-   
- <Div class="titlePortfolioSection">
-    MY PORTFOLIO
-</Div>
 
+    <!-- Portfolio Section -->
+    <div class="titlePortfolioSection">MY PORTFOLIO</div>
     <section class="portfolio-section">
-    
         <div class="site">
-            <div  class="linksSites">
-             <a class="textLinks" target="_blank" href="https://surpresa-n.vercel.app/"> Visit "Botão Fujão"</a>
+            <div class="linksSites">
+                <a class="textLinks" target="_blank" href="https://surpresa-n.vercel.app/">Visit "Botão Fujão"</a>
             </div>
             <iframe src="https://surpresa-n.vercel.app/" width="100%" height="300"></iframe>
         </div>
-
         <div class="site">
             <div class="linksSites">
-            <a class="textLinks" target="_blank" href="https://buscador-sepia.vercel.app/"> Visit "Buscador Cep"</a>
-        </div>
+                <a class="textLinks" target="_blank" href="https://buscador-sepia.vercel.app/">Visit "Buscador Cep"</a>
+            </div>
             <iframe src="https://buscador-sepia.vercel.app/" width="100%" height="300"></iframe>
         </div>
-
         <div class="site">
-            <div  class="linksSites">
-            <a class="textLinks" target="_blank" href="https://landing-alura.vercel.app/"> Visit "Landing Page Alura"</a>
+            <div class="linksSites">
+                <a class="textLinks" target="_blank" href="https://landing-alura.vercel.app/">Visit "Landing Page Alura"</a>
+            </div>
+            <iframe src="https://landing-alura.vercel.app/" width="100%" height="300"></iframe>
         </div>
-            <iframe src="https://landing-alura.vercel.app/"  width="100%" height="300"></iframe>
-        </div>
-
         <div class="site">
-            <div  class="linksSites">
-                <a class="textLinks" target="_blank" href="https://cofee-shop-rouge.vercel.app/"> Visit "The Coffee Shop"</a>
+            <div class="linksSites">
+                <a class="textLinks" target="_blank" href="https://cofee-shop-rouge.vercel.app/">Visit "The Coffee Shop"</a>
             </div>
             <iframe src="https://cofee-shop-rouge.vercel.app/" width="100%" height="300"></iframe>
         </div>
-        
         <div class="site">
-            <div  class="linksSites">
-                <a class="textLinks" target="_blank" href=" https://organograma-alura-taupe.vercel.app/"> Visit "Organograma"</a>
+            <div class="linksSites">
+                <a class="textLinks" target="_blank" href="https://organograma-alura-taupe.vercel.app/">Visit "Organograma"</a>
             </div>
-            <iframe src=" https://organograma-alura-taupe.vercel.app/" width="100%" height="300"></iframe>
+            <iframe src="https://organograma-alura-taupe.vercel.app/" width="100%" height="300"></iframe>
         </div>
         <div class="siteComing">
-        <p> "coming soon"</p>
+            <p>"coming soon"</p>
         </div>
-       
     </section>
 
-
-    <button id="toggle-buttonI" class="toggle-buttonI">My certificates</h4></button>
-
-<section id="image-section" class="image-section">
-    <img id="toggle-image" src="./certificados.Alura.png" alt="certificates" style="display: none;">
-</section>
-    
+    <!-- Certificates Section -->
+    <button id="toggle-buttonCertificates" class="toggle-buttonCertificates">My certificates</button>
+    <section id="image-section" class="image-section">
+        <img id="toggle-image" src="./certificados.Alura.png" alt="certificates" style="display: none;">
+    </section>
 
     <footer>
         <p>&copy; 2024 Luiz Daniel M C Junior</p>
     </footer>
 
-    <script src="./script.Js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

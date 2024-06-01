@@ -1,72 +1,73 @@
-const toggleButtonT = document.getElementById('toggle-buttonT');
-const toggleMenuT = document.getElementById('toggle-menu')
+// File: script.js
+
+// Elements
+const toggleButtonT = document.getElementById('toggle-buttonTechnologies');
+const toggleMenuT = document.getElementById('toggle-contatos');
 const toggleButton = document.getElementById('toggle-button');
-const toggleMenu = document.getElementById('toggle-menu');
-const technologiesSection = document.getElementById('technologies');
+const toggleMenu = document.getElementById('toggle-contatos');
+const technologiesSection = document.getElementById('SectionTechnologies');
+const pauseButton = document.getElementById("pauseButton");
+const topicSelect = document.getElementById("topicSelect");
+const image = document.getElementById('toggle-image');
+const toggleButtonCertificates = document.getElementById('toggle-buttonCertificates');
 
-const mytech= document.getElementById('technology');
-
+// Toggle Contact Menu
 toggleButton.addEventListener('click', () => {
     toggleMenu.classList.toggle('expanded');
-    mytech.classList.remove('expanded');
+    hideTechnologiesSection(); // Hide technologies section when contact menu is toggled
 });
 
-// JavaScript to toggle the technologies section
+// Toggle Technologies Section
 toggleButtonT.addEventListener('click', () => {
-    technologiesSection.classList.toggle('expanded'); // Toggle the 'show' class
-    toggleMenuT.classList.remove('expanded');
-
-    // Call the function to toggle technology display
+    technologiesSection.classList.toggle('expanded');
     toggleTechnologyDisplay();
+    toggleShow();
 });
 
-toggleButtonT.addEventListener('click', () => {
-    // Toggle the 'show' class to display/hide the technologies section
-    technologiesSection.classList.toggle('show');
-
-    // If the technologies section is shown, scroll to it
-    if (technologiesSection.classList.contains('show')) {
-        technologiesSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        // If the technologies section is hidden, scroll back to the top of the page
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-});
-
-// Function to toggle the display of "technology"
+// Toggle Technology Display
 function toggleTechnologyDisplay() {
-    const technologies = document.querySelectorAll('.technology');
+    const technologies = document.querySelectorAll('.EachTechnology');
     technologies.forEach(tech => {
-        if (tech.style.display === 'flex') {
-            tech.style.display = 'none';
-        } else {
-            tech.style.display = 'flex';
-        }
+        tech.style.display = (tech.style.display === 'flex') ? 'none' : 'flex';
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Other code remains the same
-});
-document.addEventListener("DOMContentLoaded", function() {
-    var contents = document.querySelectorAll(".content");
-    var currentContentIndex = 0;
-    var pauseButton = document.getElementById("pauseButton");
-    var topicSelect = document.getElementById("topicSelect");
-    var intervalId;
+// Toggle Show Class and Scroll
+function toggleShow() {
+    if (technologiesSection.classList.contains('expanded')) {
+        toggleMenu.classList.remove('expanded')
+        technologiesSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
 
-    // Function to toggle between content sections
+// Hide Technologies Section
+function hideTechnologiesSection() {
+    technologiesSection.classList.remove('expanded');
+    const technologies = document.querySelectorAll('.EachTechnology');
+    technologies.forEach(tech => {
+        tech.style.display = 'none';
+    });
+}
+
+// Toggle Image Display
+toggleButtonCertificates.addEventListener('click', () => {
+    image.style.display = (image.style.display === 'none') ? 'block' : 'none';
+});
+
+// Content Cycling
+document.addEventListener("DOMContentLoaded", () => {
+    const contents = document.querySelectorAll(".content");
+    let currentContentIndex = 0;
+    let intervalId;
+
     function toggleContent(index) {
-        contents.forEach(function(content, idx) {
-            if (idx === index) {
-                content.classList.add("active");
-            } else {
-                content.classList.remove("active");
-            }
+        contents.forEach((content, idx) => {
+            content.classList.toggle("active", idx === index);
         });
     }
 
-    // Function to handle pause/resume button click
     function togglePause() {
         if (intervalId) {
             clearInterval(intervalId);
@@ -78,32 +79,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Function to switch to the next content section
     function nextContent() {
         toggleContent(currentContentIndex);
         currentContentIndex = (currentContentIndex + 1) % contents.length;
-        topicSelect.value = (currentContentIndex + 1).toString(); // Update topic selector
+        topicSelect.value = (currentContentIndex + 1).toString();
     }
 
-    // Initial automatic switch after 4 seconds
     intervalId = setInterval(nextContent, 2000);
-
-    // Event listener for pause/resume button click
     pauseButton.addEventListener("click", togglePause);
-
-    // Event listener for topic selector change
-    topicSelect.addEventListener("change", function() {
-        var selectedIndex = parseInt(topicSelect.value) - 1;
+    topicSelect.addEventListener("change", () => {
+        const selectedIndex = parseInt(topicSelect.value) - 1;
         toggleContent(selectedIndex);
         currentContentIndex = selectedIndex;
     });
-});
-document.getElementById('toggle-buttonI').addEventListener('click',
- function() {
-    var image = document.getElementById('toggle-image');
-    if (image.style.display === 'none') {
-        image.style.display = 'block';
-    } else {
-        image.style.display = 'none';
-    }
 });

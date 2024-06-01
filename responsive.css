@@ -1,37 +1,64 @@
 @media (max-width: 660px) {
     .navbar  {
-        float: none;
-      display: inline-flex;
-      flex-direction:column ;
-        text-align: center;
+        width: 100%;
+        display: inline-flex;
+        flex-direction: row;
     }
-    .apresentation{
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul li {
+        width: 150px;
+        display: inline-block;
+        margin-left: 20px;
+    }
+    
+    ul li:hover {
+        border-bottom: solid 7px var(--greenSoft);
+        cursor: pointer;
+    }
+    
+    ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .apresentation {
         margin-top: 150px;
         align-items: center;
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         width: 100%;
+        margin-left: 0;
+        padding: 0;
+        gap: 0;
     }
+    
     .apresentationText {
         font-size: 1em;
     }
-
+    
     .LDMCJR {
         width: auto;
     }
-    .technologies{
-        display:flex;
+    
+    .SectionTechnologies {
+        display: flex;
         flex-direction: column;
         width: 100%;
         height: max-content;
         justify-content: center;
-       
     }
-.technology{
-  
-    justify-content: center;
-}
-    .technology .description { 
+    
+    .EachTechnology {
+        justify-content: center;
+    }
+    
+    .EachTechnology .description {
         margin-left: 10%;
         margin-top: 100px;
         padding-top: 20px;
@@ -44,87 +71,52 @@
         border-radius: 5px;
         opacity: 0;
         transition: opacity 0s ease;
-    }   
-    
-
-    .container 
-    { 
-        text-align: center;
-        border-top:solid 25px var(--blackGeneral);
-        border-left:solid 15px var(--blackGeneral);
-        border-right:solid 15px var(--YellowDescriptions);
-        border-bottom: solid 25px var(--YellowDescriptions);
-        background-image: url('../images/sexPistols.jpg');
-        background-position:left;
-        background-size:50%;
-        height: 490px;
-        position: relative;
-       
     }
-
-.content { 
-    width: 100%;
-    height: 100%;
-    display: none;
-    margin: 0;
-    position:absolute;
-}
-
-.content.active {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    position:absolute;
-    height: fit-content;
     
-}
-
-mark{
-    background-color: var(--blackGeneral);
-    color: var(--YellowDescriptions);
-    opacity: 0.7;
-}
-.descricao{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    font-weight: 1000;
-    color: var(--YellowDescriptions);
-    font-family: cursive;
+    .containerKnowMe { 
+        height: max-content;
+    }
     
-}
-
-.fotosContent{
-    padding: 10px;
-    margin-left: 25%;
-    width: 50%; 
-    height: 100%;
-
-}
-.fotosContentLDMCJR{
-    padding: 10px;
-    margin-left: 25%;
-    width: 50%; 
-    height: 200px;
-}
-
-.fotosContentRSS{
-
-    padding: 10px;
-    margin-left: 25%;
-    width: 50%;
-    height: 200px;
-}
-
-
-#topicSelect:focus {
-    outline: none;
-}
-}
-.toggle-buttonI {
-    width: 100%;
-    font-size: 1em;
+    .content {
+        width: 100%;
+        height: max-content;
+        display: none;
+    }
+    
+    .content.active {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    .fotosContent {
+        padding: 0;
+        margin-left: 25%;
+        width: 50%;
+        height: 100%;
+    }
+    
+    .fotosContentLDMCJR {
+        padding: 0;
+        margin-left: 25%;
+        width: 50%;
+        height: 200px;
+    }
+    
+    .fotosContentRSS {
+        padding: 0;
+        margin-left: 10%;
+        width: 80%;
+        height: 200px;
+    }
+    
+    #topicSelect:focus {
+        outline: none;
+    }
+    
+    .toggle-buttonCertificates {
+        width: 100%;
+        font-size: 1em;
+    }
 }

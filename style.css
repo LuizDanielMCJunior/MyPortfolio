@@ -3,9 +3,11 @@
     --blueOcean-color: rgb(36, 82, 167);
     --greenSoft: rgb(134, 184, 134);
     --YellowDescriptions: #d3e71b;
-    --blackGeneral:#1a1a1a;
+    --blackGeneral: #1a1a1a;
 }
-*{  margin-bottom: 0;
+
+* {
+    margin-bottom: 0;
     margin-right: 0;
     padding-right: 0;
     box-sizing: border-box;
@@ -29,11 +31,11 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a1a;
+    background-color: var(--blackGeneral);
     color: #fff;
     padding: 10px 20px;
 }
@@ -47,6 +49,16 @@ body {
     margin-left: 2%;
     font-size: 30px;
     font-weight: bold;
+}
+
+.linksMenu {
+    width: max-content;
+    display: flex;
+    margin-right: 90px;
+}
+
+.LinksMenuLi {
+    width: max-content;
 }
 
 ul {
@@ -71,7 +83,7 @@ ul li a {
     color: #fff;
 }
 
-.toggle-menu {
+.toggle-contatos {
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -84,25 +96,26 @@ ul li a {
     color: #fff;
     transition: 1.8s;
     overflow-y: auto;
+    z-index: 2; /* Adjust z-index to ensure it's above other elements */
 }
 
-.toggle-menu.expanded {
+.toggle-contatos.expanded {
     width: 200px;
+    z-index: 3; /* Increase z-index further when expanded */
 }
 
-.toggle-menu ul {
- 
+.toggle-contatos ul {
     padding: 0;
     margin: 0;
 }
 
-.toggle-menu ul li {  
-     margin-top: 10px;
+.toggle-contatos ul li {
+    margin-top: 10px;
     list-style: none;
     padding: 10px;
 }
 
-.toggle-menu ul li a {
+.toggle-contatos ul li a {
     text-decoration: none;
     color: #fff;
 }
@@ -148,90 +161,27 @@ ul li a {
     font-family: cursive;
     background-color: var(--greenSoft);
 }
-.knowMe{
- 
-    font-size: 25px;
-    width: 61%;
-    gap: 10%;
-  
-}
-.knowMe h3{
-    margin-left: auto;
-    font-family: 'Cormorant Garamond';
-    font-style: italic;
-    font-size: 40px;
-    width: 100%;
-    align-self: center;
-    text-align: center;
-    background-color:var(--blackGeneral);
-    color: #ffff;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    border-radius: 10px;
-    padding: 10px;
-}
-.technology.active {
+/* Additional CSS for expanded class */
+.SectionTechnologies.expanded {
     display: flex;
-   
 }
 
-.toggle-buttonT {
-    text-align: center;
-    align-self: center;
-    cursor: pointer;
-    font-family: 'Cormorant Garamond';
-    font-style: italic;
-    font-size: 40px;
-    width: 100%;
-    height: auto;
-    background-color:var(--blackGeneral);
-    color: #ffff;
-    font-weight: bold;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    border-radius: 10px;
-    border-style: none;
-    padding: 10px;
-}
+/* The rest of your CSS remains the same */
 
-.toggle-buttonT:hover {
-    border: 6px solid #ffff;
-    height: auto;
-    padding: 10px;
-}
-
-
-
-.description {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-.technologies{
+.SectionTechnologies {
     display: flex;
     width: 80%;
     align-self: center;
 }
 
-.technology.hidden .description {
-    display: none;}
-
-.technology {
+.EachTechnology {
     height: auto;
     display: none;
     margin-top: 10%;
     position: relative;
 }
 
-.technology .description {
+.EachTechnology .description {
     padding-top: 20px;
     font-size: 20px;
     position: absolute;
@@ -244,62 +194,94 @@ ul li a {
     transition: opacity 0s ease;
 }
 
-.technology.active .description {
+.EachTechnology.active .description {
     opacity: 1;
     display: flex;
-
 }
 
-.technology:hover .description {
+.EachTechnology:hover .description {
     opacity: 1; /* Show description on hover */
     transform: translateY(-100%); /* Move description above the image */
     width: 80%;
     height: auto;
 }
 
-.technology:not(:hover) .description {
+.EachTechnology:not(:hover) .description {
     opacity: 0; /* Hide description when not hovered */
     transform: translateY(0); /* Reset transform */
 }
 
-.technology img {
+.EachTechnology img {
     display: flex;
     width: 80%;
     height: 400px;
     transition: opacity 1.0s ease;
 }
-.menu button {
-    cursor: pointer;
-}
-.menu {
+
+.toggle-buttonTechnologies {
     text-align: center;
-    margin: 60px;
+    align-self: center;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-size: 40px;
+    width: 100%;
+    height: auto;
+    background-color: var(--blackGeneral);
+    color: #ffff;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+    border: 6px solid #ffff;
 }
-.knowMe{
+
+.knowMe {
+    font-size: 25px;
+    width: 100%;
+    font-family: 'Cormorant Garamond';
+    font-style: italic;
+    font-size: 40px;
     width: 100%;
     align-self: center;
     text-align: center;
+    background-color: var(--blackGeneral);
+    color: var(--YellowDescriptions);
+    font-weight: bold;
+    margin-top: 5%;
+    border-radius: 10px;
 }
-.container { 
-    border-top:solid 25px var(--blackGeneral);
-    border-left:solid 15px var(--blackGeneral);
-    border-right:solid 15px var(--YellowDescriptions);
+
+.menuKnowMe button {
+    cursor: pointer;
+}
+
+.menuKnowMe {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.containerKnowMe {
+    border-top: solid 25px var(--blackGeneral);
+    border-left: solid 15px var(--blackGeneral);
+    border-right: solid 15px var(--YellowDescriptions);
     border-bottom: solid 25px var(--YellowDescriptions);
     background-image: url('../images/sexPistols.jpg');
-    background-position:left;
-    background-size:50%;
-    width:80%;
+    background-position: left;
+    background-size: 50%;
+    width: 80%;
     height: 300px;
     margin: 0 auto;
-    position: relative;
-   
 }
-.content { 
+
+.content {
     width: 100%;
     height: 300px;
     display: none;
     margin: 0;
-    position:absolute;
+    position: static;
 }
 
 .content.active {
@@ -307,38 +289,41 @@ ul li a {
     height: 100%;
     display: flex;
     margin: 0;
-    position:absolute;
-    
+    position: static;
 }
 
-mark{
+mark {
+    position: static;
     background-color: var(--blackGeneral);
     color: var(--YellowDescriptions);
     opacity: 0.7;
 }
-.descricao{
+
+.descricaoKnowAboutMe {
+    position: static;
     width: 100%;
     display: flex;
     flex-direction: column;
     font-size: 20px;
     font-weight: 1000;
     color: var(--YellowDescriptions);
-    font-family: cursive;
-    
 }
 
-.fotosContent{
-    width:  35%;
+.fotosContent {
+    width: 35%;
 }
-.fotosContentLDMCJR{
-    width:  45%;
+
+.fotosContentLDMCJR {
+    width: 45%;
 }
-.fotosContentRSS{
-    width: 50% ;
+
+.fotosContentRSS {
+    width: 50%;
 }
-#pauseButton{
+
+#pauseButton {
     margin-top: 50px;
-    border: 5px solid var(--blackGeneral) ;
+    border: 5px solid var(--blackGeneral);
     padding: 0;
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -349,14 +334,16 @@ mark{
     background-color: var(--blackGeneral);
     color: var(--YellowDescriptions);
 }
-#pauseButton:hover{
+
+#pauseButton:hover {
     height: 100px;
     width: 220px;
     font-size: 30px;
 }
-#topicSelect{
+
+#topicSelect {
     margin-top: 120px;
-    border: 5px solid var(--blackGeneral) ;
+    border: 5px solid var(--blackGeneral);
     background-color: var(--blackGeneral);
     color: var(--YellowDescriptions);
     height: 60px;
@@ -369,11 +356,12 @@ mark{
 #topicSelect:focus {
     outline: none;
 }
-.sectionAbout{
-   padding-top: 20px;
+
+.sectionAbout {
+    padding-top: 20px;
     border: 30px solid transparent;
     border-top: solid 15px var(--YellowDescriptions);
-    border-left:solid 15px var(--YellowDescriptions);
+    border-left: solid 15px var(--YellowDescriptions);
     align-self: center;
     display: flex;
     width: 70%;
@@ -389,7 +377,6 @@ mark{
 
 .site {
     height: max-content; /* Set height of each site container */
- /* Hide overflow content */
 }
 
 .site iframe {
@@ -398,9 +385,9 @@ mark{
     width: 100%; /* Set iframe width to fill its container */
     height: 500px; /* Set iframe height to fill its container */
     justify-content: center;
-
 }
-.siteComing{
+
+.siteComing {
     border: solid black 5px;
     display: flex;
     width: 100%; /* Set iframe width to fill its container */
@@ -408,29 +395,32 @@ mark{
     justify-content: center;
     align-items: center;
 }
-.siteComing p{
-    color:var(--blackGeneral);
+
+.siteComing p {
+    color: var(--blackGeneral);
     background-color: var(--YellowDescriptions);
     font-size: 30px;
     padding: 8px;
 }
-.titlePortfolioSection{
+
+.titlePortfolioSection {
     margin-left: auto;
     padding: 10px;
     font-family: 'Cormorant Garamond';
     font-style: italic;
     font-size: 40px;
     width: 100%;
-   justify-content: center;
-   text-align: center;
-    background-color:var(--blackGeneral);
-    color: #ffff;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--blackGeneral);
+    color: var(--YellowDescriptions);
     font-weight: bold;
     margin-top: 5%;
     margin-bottom: 2%;
     border-radius: 10px;
 }
-.linksSites{
+
+.linksSites {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,37 +433,33 @@ mark{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.linksSites:hover{
+
+.linksSites:hover {
     height: 40px;
-    border:solid  #fff;
+    border: solid #fff;
 }
-.textLinks{
+
+.textLinks {
     text-align: center;
     width: 100%;
     text-decoration: none;
     color: var(--YellowDescriptions);
 }
 
-#toggle-buttonI {
+#toggle-buttonCertificates {
+    border: 6px solid #ffff;
     font-size: 40px;
     cursor: pointer;
     width: 100%;
     height: auto;
-    background-color:var(--blackGeneral);
+    background-color: var(--blackGeneral);
     margin-top: 5%;
     border-radius: 10px;
-    border-style: none;
-    padding: 10px;   
-     font-weight: bold;
-      color: #ffff;  
-      font-style: italic; 
-      font-family: 'Cormorant Garamond';
-}
-
-#toggle-buttonI:hover{
-border: 6px solid #ffff;
-height: auto;
-padding: 10px;
+    padding: 10px;
+    font-weight: bold;
+    color: #ffff;
+    font-style: italic;
+    font-family: 'Cormorant Garamond';
 }
 
 /* Style for the image section */
@@ -489,7 +475,6 @@ padding: 10px;
     border-radius: 10px;
 }
 
-
 footer {
     margin-top: 100px;
     background-color: var(--blackGeneral);
@@ -498,6 +483,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
 footer p {
     color: #fff;
     font-size: 30px;
