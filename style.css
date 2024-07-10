@@ -369,7 +369,7 @@ mark {
 
 .portfolio-section {
     align-self: center;
-    width: 80%;
+    width: 85%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust number of columns based on available space */
     gap: 20px; /* Adjust gap between grid items */
@@ -382,9 +382,10 @@ mark {
 .site iframe {
     display: flex;
     border: none; /* Remove iframe border */
-    width: 100%; /* Set iframe width to fill its container */
+    width: 380px; /* Set iframe width to fill its container */
     height: 500px; /* Set iframe height to fill its container */
     justify-content: center;
+    padding: 5px;
 }
 
 .siteComing {
